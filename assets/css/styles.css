@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+  background-image: url(../images/bg-body.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  overflow-x: hidden;
+  padding: 1rem;
+}
+button {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 80rem;
+  height: auto;
+  position: relative;
+  border: 1px solid #f9f9f9;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: all 300ms ease-in-out;
+}
+.video-container .controls {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(150%);
+  transition: all 300ms ease-in-out;
+}
+.video-container:hover .controls {
+  transform: translateY(0);
+}
+.controls button {
+  cursor: pointer;
+}
+.controls button svg {
+  width: 2rem;
+  height: 2rem;
+  fill: #fff;
+}
+.controls .playpause {
+  position: absolute;
+  left: 2rem;
+  transition: 500ms;
+}
+
+.controls .progress {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -0.75rem;
+}
+.controls .fullscreen {
+  position: absolute;
+  right: 2rem;
+}
+.controls .volume-mute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  position: absolute;
+  left: 8rem;
+  transition: all 500ms ease-in-out;
+}
+.controls .volume-mute input {
+  order: 1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease-in-out;
+}
+.controls .volume-mute:hover input {
+  opacity: 1;
+  visibility: visible;
+}
+.controls .playpause #pause {
+  display: none;
+}
+.controls .playpause.active #pause {
+  display: block;
+}
+.controls .playpause.active #play {
+  display: none;
+}
+.controls .volume-mute div #mute {
+  display: none;
+}
+.controls .volume-mute div.active #mute {
+  display: block;
+}
+.controls .volume-mute div.active #volume {
+  display: none;
+}
+.controls input[type='range'] {
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+.controls input[type='range']::-moz-range-track {
+  width: 100%;
+  border-color: transparent;
+  color: transparent;
+  background: transparent;
+  cursor: pointer;
+}
+.controls input[type='range']::-webkit-slider-thumb {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid #00bcd4;
+  background-color: #fff;
+  margin-top: -0.7rem;
+  cursor: pointer;
+}
+.controls input[type='range']::-moz-range-thumb {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid #00bcd4;
+  background-color: #fff;
+  margin-top: -0.6rem;
+  cursor: pointer;
+}
+.controls input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.75rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  transition: all 300ms ease-in-out;
+}
+.controls input[type='range']:focus::-webkit-slider-runnable-track {
+  background-color: #e3e3e3;
+}
+.controls input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 0.75rem;
+  background-color: #fff;
+  border: 0.25rem;
+  transition: all 300ms ease-in-out;
+}
+.controls input[type='range']:focus::-moz-range-track {
+  background-color: #e3e3e3;
+}
